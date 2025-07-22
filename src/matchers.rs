@@ -7,3 +7,7 @@ pub enum RelNodeMatcher {
     },
     Any,
 }
+
+impl RelNodeMatcher {
+    pub fn match()
+}

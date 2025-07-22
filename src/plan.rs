@@ -66,7 +66,7 @@ pub fn join(
     cond: impl Into<Arc<RelNode>>,
 ) -> RelNode {
     RelNode {
-        typ: RelNodeType::Filter,
+        typ: RelNodeType::Join,
         children: vec![left.into(), right.into(), cond.into()],
         data: Arc::new(RelAttrType::None),
     }
@@ -244,12 +244,4 @@ pub fn plan() -> RelNode {
         ),
         eq_pred(column_ref_pred(2), const_pred(3)),
     )
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_plan_repr()
 }
